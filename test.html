@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>小考</title>
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>
+
+	<style type="text/css">
+	li{
+		color: black
+	}
+	</style>
+
+  </head>
+  <body>
+	<h1 id="head">Web Programing</h1>
+	<hr>
+	<p name="content">
+		Content
+		<ul>
+			<li id="li_HTML">Html</li>
+			<li id="li_CSS">CSS</li>
+			<li id="li_DOM">DOM</li>
+			<li id="li_JS">JavaScript</li>
+			<li id="li_JSP">JSP</li>
+		</ul>
+	</p>
+	<p>
+		<button id="change_JS" type="button">以JS更改元素內容</button>
+		<button id="change_CSS" type="button">以jQuery更改CSS</button>
+		<button id="change_WEB" type="button">按按鈕把Web Design改成Web Design+學號</button>
+	</p>
+
+
+	<script>
+    function changeH1(){
+    	var str = document.getElementById('head').innerHTML;
+    	var stdID = '4103028026';
+    	document.getElementById('head').innerHTML = str+' '+stdID;
+    }
+
+    function changeJS(){
+    	var str = document.getElementById('li_HTML').innerHTML;
+    	var newstr = "HTML5";
+    	document.getElementById('li_HTML').innerHTML = newstr;
+    }
+    function changeCSS(){
+    	var str = document.getElementById('li_CSS').innerHTML;
+    	var newstr = "CSS3";
+    	document.getElementById('li_CSS').innerHTML = newstr;
+
+    	var jsp = document.getElementById(li_JSP);
+    }
+    function setCSS(){
+    	document.getElementById('li_HTML').style.color = "red";
+    }
+    function removeCSS(){
+    	document.getElementById('li_HTML').style.color = "black";
+
+    }
+
+    </script>
+
+    <script type="text/javascript">
+		//add Listener
+	    var btnWEB = document.querySelector('#change_WEB');
+	    var btnJS = document.querySelector('#change_JS');
+	    var btnCSS = document.querySelector('#change_CSS');
+
+	    btnWEB.addEventListener('click', function(){changeH1();});  
+	    btnJS.addEventListener('click', function(){changeJS();});  
+	    btnCSS.addEventListener('click', function(){changeCSS();});  
+
+
+	    var li_HTML = document.getElementById('li_HTML');
+
+	    li_HTML.addEventListener('mouseover',function(){setCSS();})
+	    li_HTML.addEventListener('mouseout',function(){removeCSS();})
+
+
+	</script>
+  </body>
+</html>
