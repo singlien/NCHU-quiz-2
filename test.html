@@ -18,12 +18,12 @@
 	<hr>
 	<p name="content">
 		Content
-		<ul>
-			<li id="li_HTML">Html</li>
-			<li id="li_CSS">CSS</li>
-			<li id="li_DOM">DOM</li>
-			<li id="li_JS">JavaScript</li>
-			<li id="li_JSP">JSP</li>
+		<ul id="content_list">
+			<li id="li_HTML" onmouseover="setCSS(this);" onmouseout="removeCSS(this);">Html</li>
+			<li id="li_CSS" onmouseover="setCSS(this);" onmouseout="removeCSS(this);">CSS</li>
+			<li id="li_DOM" onmouseover="setCSS(this);" onmouseout="removeCSS(this);">DOM</li>
+			<li id="li_JS" onmouseover="setCSS(this);" onmouseout="removeCSS(this);">JavaScript</li>
+			<li id="li_JSP" onmouseover="setCSS(this);" onmouseout="removeCSS(this);">JSP</li>
 		</ul>
 	</p>
 	<p>
@@ -44,19 +44,29 @@
     	var str = document.getElementById('li_HTML').innerHTML;
     	var newstr = "HTML5";
     	document.getElementById('li_HTML').innerHTML = newstr;
+
+       	addNode();
     }
-    function changeCSS(){
-    	var str = document.getElementById('li_CSS').innerHTML;
-    	var newstr = "CSS3";
-    	document.getElementById('li_CSS').innerHTML = newstr;
+    function changejQuery(){
+    	var str = $('#li_CSS');
+    	var newstr = 'CSS3';
+    	str.html(newstr);
 
     	var jsp = document.getElementById(li_JSP);
     }
-    function setCSS(){
-    	document.getElementById('li_HTML').style.color = "red";
+    function setCSS(obj){
+    	obj.style.color = "red";
     }
-    function removeCSS(){
-    	document.getElementById('li_HTML').style.color = "black";
+    function removeCSS(obj){
+    	obj.style.color = "black";
+    }
+
+    function addNode(){
+    	var n1 = document.createElement("li");
+    	n1.innerHTML = "MySQL";
+
+    	var u = document.getElementById('content_list');
+    	u.appendChild(n1);
 
     }
 
@@ -70,13 +80,42 @@
 
 	    btnWEB.addEventListener('click', function(){changeH1();});  
 	    btnJS.addEventListener('click', function(){changeJS();});  
-	    btnCSS.addEventListener('click', function(){changeCSS();});  
+	    btnCSS.addEventListener('click', function(){changejQuery();});  
 
-
-	    var li_HTML = document.getElementById('li_HTML');
-
-	    li_HTML.addEventListener('mouseover',function(){setCSS();})
-	    li_HTML.addEventListener('mouseout',function(){removeCSS();})
+	 //    li_HTML.addEventListener('mouseover',function(){
+	 //    	document.getElementById('li_HTML').style.color = "red";
+	 //    });
+	 //    li_HTML.addEventListener('mouseout',function(){
+	 //    	document.getElementById('li_HTML').style.color = "black";
+		// });
+		
+		// li_CSS.addEventListener('mouseover',function(){
+	 //    	document.getElementById('li_CSS').style.color = "red";
+	 //    });
+	 //    li_CSS.addEventListener('mouseout',function(){
+	 //    	document.getElementById('li_CSS').style.color = "black";
+		// });
+		
+		// li_DOM.addEventListener('mouseover',function(){
+	 //    	document.getElementById('li_DOM').style.color = "red";
+	 //    });
+	 //    li_DOM.addEventListener('mouseout',function(){
+	 //    	document.getElementById('li_DOM').style.color = "black";
+		// });
+		
+		// li_JSP.addEventListener('mouseover',function(){
+	 //    	document.getElementById('li_JSP').style.color = "red";
+	 //    });
+	 //    li_JSP.addEventListener('mouseout',function(){
+	 //    	document.getElementById('li_JSP').style.color = "black";
+		// });
+		
+		// li_JS.addEventListener('mouseover',function(){
+	 //    	document.getElementById('li_JS').style.color = "red";
+	 //    });
+	 //    li_JS.addEventListener('mouseout',function(){
+	 //    	document.getElementById('li_JS').style.color = "black";
+		// });
 
 
 	</script>
